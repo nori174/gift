@@ -1,87 +1,60 @@
-<style>
-  /* اللون العام للنصوص */
-  body {
-    color: #ffffff; /* أبيض واضح */
-    font-family: 'Arial', sans-serif;
-    background-color: #1a1a1a; /* خلفية داكنة لتبرز النصوص */
-  }
+:root{
+  --bg:#0bb3f2;
+  --bg-2:#0aa0d7;
+  --ink:#0c2333;
+  --muted:#5a7486;
+  --white:#fff;
+  --surface:#f7fbff;
+  --primary:#1d9bf0;
+  --radius:14px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:"Cairo", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color:var(--ink);
+  background:linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 280px, var(--surface) 280px);
+}
+.container{width:min(1100px, 92%); margin-inline:auto}
 
-  /* عناوين الأقسام */
-  h2 {
-    color: #FFD700; /* ذهبي جذاب */
-    text-align: center;
-    margin-bottom: 20px;
-    text-shadow: 1px 1px 3px #000; /* ظل لإبراز العنوان */
-  }
+/* ---- تحسين وضوح النصوص ---- */
+.social-proof, .faq, .cta, .footer {
+  color: #0c2333; /* نصوص واضحة */
+}
 
-  /* فقرة المحتوى */
-  p {
-    color: #f0f0f0; /* أبيض فاتح */
-    line-height: 1.6;
-  }
+.social-proof blockquote {
+  color: #0c2333;
+}
 
-  /* الاقتباسات */
-  blockquote {
-    background: rgba(255, 255, 255, 0.1);
-    border-left: 5px solid #FFD700;
-    padding: 15px 20px;
-    margin: 15px 0;
-    border-radius: 8px;
-    color: #ffffff;
-    font-style: italic;
-  }
+.social-proof blockquote footer {
+  color: #1d9bf0;
+}
 
-  blockquote footer {
-    color: #FFD700;
-    text-align: right;
-    margin-top: 10px;
-    font-weight: bold;
-  }
+.cta h2, .faq h2, .social-proof h2 {
+  color: #1d1d1d;
+}
 
-  /* الأزرار */
-  .btn--primary {
-    background-color: #FF69B4; /* وردي جذاب */
-    color: #ffffff;
-    padding: 15px 30px;
-    border-radius: 8px;
-    text-decoration: none;
-    display: inline-block;
-    font-weight: bold;
-    transition: 0.3s;
-  }
+.cta p, .faq p, details p {
+  color: #0c2333;
+}
 
-  .btn--primary:hover {
-    background-color: #FF1493; /* وردي أغمق عند التحويم */
-  }
+.footer, .footer__links a {
+  color: #ffffff;
+}
 
-  /* التفاصيل FAQ */
-  details summary {
-    cursor: pointer;
-    font-weight: bold;
-    color: #FFD700;
-    margin: 10px 0;
-  }
-
-  details p {
-    color: #f0f0f0;
-    padding-left: 15px;
-  }
-
-  /* الفوتر */
-  .footer {
-    background-color: #111;
-    padding: 20px 0;
-    color: #ccc;
-    text-align: center;
-  }
-
-  .footer a {
-    color: #FFD700;
-    margin: 0 10px;
-    text-decoration: none;
-  }
-
-  .footer a:hover {
-    text-decoration: underline;
-  }
-</style>
+/* باقي CSS الأصلي */
+.social-proof{background:#fff; padding:40px 0}
+.quotes{display:grid; grid-template-columns:1fr 1fr; gap:18px}
+blockquote{margin:0; padding:18px; background:#f6fbff; border-radius:12px; border:1px solid #e7f2fa}
+blockquote footer{margin-top:8px; font-size:13px}
+.cta{background:linear-gradient(180deg,#fef6d1,#fff); padding:46px 0; text-align:center;}
+.cta p{margin:8px 0 18px;}
+.faq{background:#fff; padding:40px 0;}
+details{background:#f6fbff; border:1px solid #e7f2fa; border-radius:12px; padding:14px 16px; margin:10px 0;}
+summary{cursor:pointer; font-weight:700;}
+.footer{background:#071c29; color:#ffffff; padding:18px 0;}
+.footer__inner{display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap}
+.footer__links a{color:#ffffff; text-decoration:none; margin-inline:8px;}
+@media (max-width: 900px){
+  .quotes{grid-template-columns:1fr}
+}
